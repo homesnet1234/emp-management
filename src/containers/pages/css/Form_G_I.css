@@ -7,7 +7,7 @@
   font-family: 'Prompt', sans-serif;
 
 }
-.div_logo{
+.div_logo {
   position: relative;
   text-align: center;
   margin-left: auto;
@@ -21,32 +21,30 @@
 }
 .profile{
   position: relative;
-  width:86%;
-  height: 94%;
-  padding-top: 2%;
-  padding-bottom: 4%;
-  padding-left: 7%;
-  padding-right: 7%;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding: 2%;
 }
 
 .profile_table{
   table-layout: fixed;
 }
 .topic{
-  padding-left: 10%;
+  padding-left: 3%;
 }
 .topic_1{
   width: 10%;
+  font-weight: bold;
 }
 .topic_2{
   width: 14%;
+  font-weight: bold;
 }
 .show_1{
-  width: 33%;
+  width: 38%;
 }
 .show_2{
-  width: 33%;
+  width: 38%;
 }
 
 .table_main{
@@ -80,7 +78,7 @@
 }
 
 .option1_row{
-  display: run-in;
+
 }
 .Submit-button{
   position: relative;
@@ -91,10 +89,13 @@
   text-decoration: none;
   border-radius: 5px;
   z-index: 2;
+  transition: 0.2s;
 }
 .Submit-button:hover{
   cursor:pointer;
-  color: #37BFDB;
+  color: #ffffff;
+  background-color: #00bf15;
+  border-color: #00bf15;
 }
 .Accept-button{
   position: relative;
@@ -110,12 +111,12 @@
   color: #37BFDB;
 }
 .dddddd{
-  /* background-color: red; */
+  //background-color: red;
   padding-top: 2%;
   width: 100%;
 }
 .result{
-  display: none;
+
 }
 .comment{
   border-radius: 7px;
@@ -141,18 +142,19 @@ img{
   width: 30%;
 }
 table{
-  /* border: 1px solid black; */
+  //border: 1px solid black;
+  table-layout: fixed;
   background-color: white;
   text-align: left;
   width: 100%;
 }
 th{
-  /* border: 1px solid black; */
+  //border: 1px solid black;
   padding: 1%;
   text-align: center;
 }
 td{
-  /* border: 1px solid black; */
+  //border: 1px solid black;
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 0.5%;
@@ -200,7 +202,7 @@ select-selected{
   width: 0rem;
   top: 50%;
   left: 75%;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .div_mark2{
   position: absolute;
@@ -209,7 +211,7 @@ select-selected{
   width: 0rem;
   top: 50%;
   left: 75%;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .div_mark3{
   position: absolute;
@@ -218,7 +220,7 @@ select-selected{
   width: 0rem;
   top: 50%;
   left: 75%;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .zzz{
   position: fixed;
@@ -246,12 +248,12 @@ select-selected{
 .result-table-hidden{
   height: 0;
   overflow: hidden;
-  transition : 0.4s;
+  transition : 0.3s;
 }
 .result-table{
   height: auto;
-  overflow: hidden;
-  transition : 0.4s;
+  overflow: visible;
+  transition : 0.3s;
 }
 .date{
   font-weight:lighter;
@@ -267,15 +269,16 @@ select-selected{
   transition-timing-function: ease-in-out;
 }
 .date_input{
+  font-size: 1em;
   border-top-style: none;
   border-left-style: none;
   border-right-style: none;
   border-bottom: 1px solid black;
-
   position: relative;
   z-index: 0;
 }
 .date_input1{
+  font-size: 1em;
   border-top-style: none;
   border-left-style: none;
   border-right-style: none;
@@ -283,8 +286,11 @@ select-selected{
   position: relative;
   display: none;
   z-index: 0;
+  transition: 0.2s;
 }
+
 .date_input2{
+  font-size: 1em;
   border-top-style: none;
   display :none;
   border-left-style: none;
@@ -300,4 +306,73 @@ select-selected{
 }
 .div_ca{
   position: relative;
+}
+.logo_back{
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+  right: 2%;
+  top: 0;
+  opacity: 0.02;
+  pointer-events: none;
+}
+.b{
+  outline: inherit;
+  position: relative;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+  display: flex;
+  left: 50%;
+  top:50%;
+  padding: 0;
+  transition: 0.2s;
+  width: 5em;
+  height: 5em;
+  border: none;
+  border-radius: 5px
+}
+
+.b .icon{
+  position: relative;
+  width: 5em;
+  height: 5em;
+  overflow: hidden;
+  //border-radius: 5px;
+
+  display: block;
+  transition: 0.2s;
+  background-color: #ffffff;
+}
+.ic{
+  width: 100%;
+}
+
+.b .text{
+  width: 0%;
+  height: 5em;
+  //border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition:0.2s;
+  display: block;
+  background-color: #60a955;
+  ;
+}
+.b .text span{
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+}
+.b:hover{
+  width: 15em;
+}
+.b:hover .icon{
+
+}
+.b:hover .text{
+  width:10em;
 }

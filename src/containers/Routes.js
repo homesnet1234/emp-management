@@ -8,7 +8,6 @@ import ProjectPage from './pages/ProjectPage';
 import ProfilePage from './pages/ProfilePage';
 import EmployeePage from './pages/EmployeePage';
 import Pro from './pages/Form'
-import PerformanceReviewForm from './pages/PerformanceReviewForm';
 
 
 const Routes = () => (
@@ -21,7 +20,6 @@ const Routes = () => (
     <PrivateRoute path="/profile/:id?" component={ProfilePage} />
     <PrivateRoute path="/employee" component={EmployeePage} />
     <PrivateRoute path="/pro" component={Pro} />
-    <PrivateRoute path="/performance" component={PerformanceReviewForm} />
   </Switch>
 );
 

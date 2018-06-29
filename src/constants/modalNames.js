@@ -20,3 +20,6 @@ export const CREATE_LEAVE_REQUEST = 'CREATE_LEAVE_REQUEST';
 
 // Other
 export const CONFIRM = 'CONFIRM';
+
+//Probation
+export const ADD_PROBATION = 'ADD_PROBATION';

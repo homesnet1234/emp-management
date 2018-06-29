@@ -253,4 +253,17 @@ api.fetchProbation = id => (
   callApi(`/api/probation/?id=${id}`)
 )
 
+api.addProbation = body => (
+  callApi('/api/probation', {
+    method: 'POST',
+    body
+  })
+)
+
+api.updateProbation = body => (
+  callApi('/api/probation', {
+    method: 'PUT',
+    body
+  })
+)
 export default api;

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal as SUIModal, Button } from 'semantic-ui-react';
 
-const Modal = ({ header, buttonName, onClose, onClick, submitting, children, confirm, deleted, onDelete, isDeleting }) => (
+const Modal = ({ header, buttonName, onClose, onClick, submitting, children, confirm, deleted, onDelete, isDeleting, size }) => (
   <SUIModal
     dimmer="blurring"
-    size="small"
+    size={size}
     closeIcon
     open
     onClose={onClose}
@@ -29,7 +29,8 @@ Modal.defaultProps = {
   confirm: false,
   deleted: false,
   onDelete: () => {},
-  isDeleting: false
+  isDeleting: false,
+  size: 'small'
 };
 
 Modal.propTypes = {
@@ -42,7 +43,7 @@ Modal.propTypes = {
   confirm: PropTypes.bool,
   deleted: PropTypes.bool,
   onDelete: PropTypes.func,
-  isDeleting: PropTypes.bool
+  isDeleting: PropTypes.bool,
 };
 
 export default Modal;
