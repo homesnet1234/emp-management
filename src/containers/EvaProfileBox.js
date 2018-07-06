@@ -46,10 +46,27 @@ const EvaProfileBox = ({performanceProfile, evaProfile, openProbationModal, id, 
         <div className="buttonGroup">
             <Button.Group>
               <Dropdown trigger={AngleDownButton} options={options} />
-              <Button onClick={() => {fetchPerformance(profileId,(new Date()).getFullYear());openPerformanceModal();}} disabled={type!='admin' && performanceProfile.length==0}>{performanceProfile.length==0 ? 'Add Performance' : 'Performance'}</Button>
+              <Button
+                onClick={() => {if(performanceProfile.length!=0)fetchPerformance(profileId,(new Date()).getFullYear());openPerformanceModal();}}
+                disabled={type!='admin' && performanceProfile.length==0}>
+                {performanceProfile.length==0 && type=='admin' ? 'Add Performance' : 'Performance'}
+              </Button>
             </Button.Group>
         </div>
-            <Button icon labelPosition='left' disabled={type!='admin' && !evaProfile} icon={evaProfile==null ? 'plus':'angle right'} content={!evaProfile && type=='admin' ? 'Create Probation':'View Probation'} onClick={()=>{fetchProbation(profileId);openProbationModal()}} color={!evaProfile && type=='admin' ? 'green':'blue'}/>
+            <Button icon
+              labelPosition='left' disabled={type!='admin' && evaProfile.length==0} icon={evaProfile.length==0 && type=='admin' ? 'plus':'angle right'}
+              content={evaProfile.length==0 && type=='admin' ? 'Create Probation':'View Probation'}
+              onClick={()=>{if(evaProfile.length!=0)fetchProbation(profileId);openProbationModal()}}
+              color={evaProfile.length==0 && type=='admin' ? 'green':'blue'}
+            />
+
+            {evaProfile.length>1 ?labelPosition='left' disabled={type!='admin' && !evaProfile}
+              labelPosition='left' disabled={type!='admin' && evaProfile.length==0} icon={evaProfile.length==0 && type=='admin' ? 'plus':'angle right'}
+              content={evaProfile && type=='admin' ? 'Create Probation':'View Probation'}
+              onClick={()=>{fetchProbation(profileId);openProbationModal()}}
+              color={!evaProfile && type=='admin' ? 'yellow':'yellow'}
+            />: ''
+            }
       </Segment>
 
 

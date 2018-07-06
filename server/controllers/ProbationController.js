@@ -25,7 +25,7 @@ exports.create = (req,res,next) => {
   const newProbationInfo = req.body.probationInfo;
   Probation.insertProbation(newProbationInfo, req.user.id)
     .then(() => {
-        Probation.findProById(req.body.probationInfo.employeeID)
+        Probation.checkExist(req.body.probationInfo.employeeID)
           .then((probations)=>{
             res.json(probations)
           });

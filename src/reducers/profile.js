@@ -20,6 +20,7 @@ const profile = (state = initialState, action) => {
         else disable = false
       }
       else if(action.payload.item.passPro === undefined) disable = true
+      else if(action.payload.item.passPro == action.payload.item.notPassPro) disable = false
       else disable = true
       return {
         ...state,

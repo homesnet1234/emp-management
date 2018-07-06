@@ -21,7 +21,8 @@ const token = jwt.decode(localStorage.getItem('token'));
 export function* fetchPerformanceTask(action){
   try{
     const profile = {};
-    profile.perfInfo = yield call(api.fetchPerformance, [action.payload.id,action.payload.year]);
+    if(action.payload.id!='new')profile.perfInfo = yield call(api.fetchPerformance, [action.payload.id,action.payload.year]);
+    else profile.perfInfo = null;
     yield put(fetchPerformanceSuccess(profile));
   }
   catch (error) {
@@ -32,7 +33,8 @@ export function* fetchPerformanceTask(action){
 export function* fetchProbationTask(action){
   try{
     const profile = {};
-    profile.eva = yield call(api.fetchProbation, action.payload.id);
+    if(action.payload.id!='new')profile.evaInfo = yield call(api.fetchProbation, action.payload.id);
+    else profile.perfInfo = null;
     yield put(fetchProbationSuccess(profile));
   }
   catch (error) {
