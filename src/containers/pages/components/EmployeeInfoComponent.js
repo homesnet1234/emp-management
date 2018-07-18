@@ -27,7 +27,7 @@ class EmployeeInfo extends React.Component {
         return (
             <div className='info-container' >
               {this.props.addSelf && this.props.mode=='edit'?
-                <table>
+                <table className='self-assessment-table'>
                     <tr>
                         <td>Supervisor:</td>
                         <td>{this.state.supervisor}</td>

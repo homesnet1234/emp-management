@@ -23,6 +23,10 @@
     width: 50;
 }
 
+.self-assessment-table {
+    border: 2px solid rgb(77, 134, 255);
+}
+
 .blue-text {
     color: rgb(44, 154, 205);
     font-size: 1.7em;
